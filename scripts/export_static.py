@@ -225,10 +225,9 @@ for cl in conn.execute("SELECT * FROM comment_clusters").fetchall():
 
     export(f"comment_cluster_{cid}", d)
 
-# post details for posts that have comments
+# post details for ALL posts in the graph
 for post in conn.execute("""
-    SELECT DISTINCT cm.post_id FROM comments cm
-    WHERE cm.body NOT IN ('[deleted]','[removed]')
+    SELECT DISTINCT ta.post_id FROM topic_assignments ta
 """).fetchall():
     pid = post["post_id"]
     p = conn.execute("""

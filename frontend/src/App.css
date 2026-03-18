@@ -430,6 +430,20 @@ body {
   line-height: 1.5;
 }
 
+/* Original post body */
+.original-post {
+  font-size: 13px;
+  color: #999;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 6px;
+  border: 1px solid #222;
+}
+
 .comment-post-ref {
   font-size: 11px;
   color: #555;

@@ -120,7 +120,18 @@ function PostPanel({ data }) {
         {post.category && <span className="badge badge-emotion">{post.category}</span>}
         <span className="badge badge-score">Score: {post.score}</span>
       </div>
-      {post.summary && <p className="panel-desc">{post.summary}</p>}
+      {post.summary && (
+        <div className="section">
+          <div className="section-label">Summary</div>
+          <p className="panel-desc">{post.summary}</p>
+        </div>
+      )}
+      {post.selftext && post.selftext !== '[removed]' && post.selftext !== '[deleted]' && (
+        <div className="section">
+          <div className="section-label">Original Post</div>
+          <div className="original-post">{post.selftext}</div>
+        </div>
+      )}
       {comments?.length > 0 && (
         <div className="section">
           <div className="section-label">Comments ({comments.length})</div>
